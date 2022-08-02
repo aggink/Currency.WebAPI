@@ -23,7 +23,7 @@ public class CurrencyController : Controller
         return Json(result);
     }
 
-    [HttpGet("currencies/{pageIndex}/{pageSize}")]
+    [HttpGet("currencies/{pageIndex:min(1)}/{pageSize:min(1)}")]
     public IActionResult Currencies(int pageIndex, int pageSize)
     {
         var result = _currencyManager.GetPagedList(pageIndex, pageSize);

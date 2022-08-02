@@ -45,8 +45,6 @@ public class CurrencyManager : ICurrencyManager
     /// <returns>The page with currencies.</returns>
     public IPagedList<CurrencyViewModel>? GetPagedList(int pageIndex, int pageSize)
     {
-        if (pageIndex <= 0 || pageSize <= 0) return null;
-
         var pageList = _currencyProvider.GetPagedList(pageIndex, pageSize);
         if (pageList == null) return null;
 
